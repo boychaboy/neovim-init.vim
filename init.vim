@@ -1,4 +1,4 @@
-""" Optixal's Neovim Init.vim
+""" boychaboy's Neovim Init.vim
 
 """ Vim-Plug
 call plug#begin()
