@@ -18,7 +18,7 @@ python3 -m virtualenv -p python3 ~/.config/nvim/env
 
 # Install pip modules for Neovim within the virtual environment created
 source ~/.config/nvim/env/bin/activate
-pip install neovim==0.2.6 jedi psutil setproctitle yapf
+pip install neovim jedi psutil setproctitle yapf
 deactivate
 
 # Install vim-plug plugin manager
