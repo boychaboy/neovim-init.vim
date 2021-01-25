@@ -31,7 +31,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
-"Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
@@ -118,7 +118,7 @@ autocmd BufLeave term://* stopinsert
 " let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
 " Supertab
-"let g:SuperTabDefaultCompletionType = "<C-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<C-Space>"
