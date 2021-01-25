@@ -31,7 +31,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
@@ -39,7 +39,7 @@ Plug 'tpope/vim-abolish'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
@@ -51,6 +51,8 @@ Plug 'dkarter/bullets.vim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'davidhalter/jedi-vim'
+Plug 'chrisbra/csv.vim'
+Plug 'nvie/vim-flake8'
 
 " Entertainment
 "Plug 'ryanss/vim-hackernews'
@@ -113,10 +115,10 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
 " vim-pydocstring
-let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
+" let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "<C-n>"
+"let g:SuperTabDefaultCompletionType = "<C-n>"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<C-Space>"
@@ -130,6 +132,8 @@ nmap ga <Plug>(EasyAlign)
 " indentLine
 let g:indentLine_char = '┊ '
 let g:indentLine_color_gui = '#363949'
+let g:indentLine_faster = 1
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'text', 'sh']
 
 " TagBar
 let g:tagbar_width = 30
@@ -158,8 +162,11 @@ let g:fzf_colors =
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" deoplete-jedi
+" jedi-vim
+let g:jedi#completions_enabled = 1
 let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#show_call_signatures = "0"   "jedi-vim slowdown
+
 
 "" Filetype-Specific Configurations
 
@@ -231,7 +238,7 @@ nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
-nmap <leader>s <C-w>s<C-w>j:terminal<CR>
+nmap <leader>ss <C-w>s<C-w>j:terminal<CR>
 nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
 nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
@@ -246,3 +253,6 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yap
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+
+" debug trigger
+nmap <F9> oimport ipdb; ipdb.set_trace(context=10)<ESC>
