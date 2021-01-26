@@ -118,7 +118,7 @@ autocmd BufLeave term://* stopinsert
 " let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "<C-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<C-Space>"
